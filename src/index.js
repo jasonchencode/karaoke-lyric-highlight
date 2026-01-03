@@ -1,8 +1,27 @@
+/**
+ * Main entry point for the lyric alignment pipeline
+ * 
+ * This script orchestrates the entire lyric alignment process:
+ * 1. Runs Whisper transcription on the audio file to get word-level timestamps
+ * 2. Normalizes the actual lyrics text
+ * 3. Aligns the lyrics to the transcribed audio timestamps
+ * 4. Saves the aligned results to a JSON file
+ * 
+ * Input files:
+ * - data/audio.wav: Audio file to transcribe
+ * - data/lyrics.txt: Text file containing the actual lyrics
+ * 
+ * Output files:
+ * - output/whisper_words.json: Whisper transcription with timestamps
+ * - output/aligned_words.json: Aligned lyrics with timing information
+ * 
+ */
+
 import { execSync } from "child_process";
 import fs from "fs";
 
 import { normalizeLyrics } from "./normalize.js";
-import { alignLyrics } from "./accurate_align.js";
+import { alignLyrics } from "./accurate_align.js"; // edit this to use the different alignment algorithms
 
 console.log("Running Whisper transcription...");
 

@@ -7,6 +7,7 @@
  * @example
  * normalizeLyrics("Hello, World!") // Returns: ["hello", "world"]
  */
+
 export function normalizeLyrics(text) {
     return text
         .toLowerCase()
@@ -27,6 +28,7 @@ export function normalizeLyrics(text) {
  * normalizeTranscription("Hello,") // Returns: "hello"
  * normalizeTranscription("don't") // Returns: "don't"
  */
+
 export function normalizeTranscription(word) {
     return word
         .toLowerCase()

@@ -1,0 +1,15 @@
+# dependencies
+node_ modules/
+
+# generated output
+output/
+
+# input/large data
+data/
+
+# logs
+*.log
+
+# OS junk
+.DS_Store
+

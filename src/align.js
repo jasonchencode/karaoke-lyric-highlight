@@ -1,3 +1,22 @@
+/**
+ * Simple lyric alignment algorithm that performs 1:1 word matching.
+ * 
+ * This is the basic alignment algorithm that matches one lyric word to one whisper word.
+ * It does not handle cases where multiple words need to be combined (e.g., "mini bar" vs "minibar").
+ * 
+ * @param {string[]} lyrics - Array of normalized lyric words
+ * @param {Array<{word: string, start: number, end: number}>} whisperWords - Array of transcribed words with timestamps
+ * @param {number} [threshold=0.85] - Minimum similarity score (0-1) to accept a match
+ * @returns {Array<{word: string, start: number, end: number}>} Array of aligned words with timing information
+ * 
+ * @example
+ * const lyrics = ["hello", "world"];
+ * const whisperWords = [
+ *   { word: "hello", start: 0.0, end: 0.5 },
+ *   { word: "world", start: 0.5, end: 1.0 }
+ * ];
+ * alignLyrics(lyrics, whisperWords); // Returns aligned array with timestamps
+ */
 import stringSimilarity from "string-similarity"
 import { normalizeTranscription } from "./normalize.js";
 

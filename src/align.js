@@ -4,7 +4,7 @@ import { normalizeTranscription } from "./normalize.js";
 export function alignLyrics(lyrics, whisperWords, threshold = 0.85) {
     const aligned = [];
     let l = 0; // lyric pointer (actual lyrics)
-    let w = 0; // whisper pointer
+    let w = 0; // Whisper pointer
 
     while (l < lyrics.length && w < whisperWords.length) {
         const lyricWord = lyrics[l];

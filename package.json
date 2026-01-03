@@ -9,6 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
-
+  "description": "",
+  "dependencies": {
+    "string-similarity": "^4.0.4"
+  }
 }

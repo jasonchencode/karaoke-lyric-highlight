@@ -21,6 +21,7 @@
  * ];
  * alignLyrics(lyrics, whisperWords); // Returns: [{ word: "mini bar", start: 0.0, end: 0.8 }]
  */
+
 import stringSimilarity from "string-similarity"
 import { normalizeTranscription } from "./normalize.js";
 

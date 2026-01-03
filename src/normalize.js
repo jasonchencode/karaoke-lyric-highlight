@@ -6,3 +6,9 @@ export function normalizeLyrics(text) {
         .filter(Boolean);
 }
  
+
+export function normalizeTranscription(word) {
+    return word
+        .toLowerCase()
+        .replace(/[^a-z0-9\s']/g, "")
+}

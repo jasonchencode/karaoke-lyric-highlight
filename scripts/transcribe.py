@@ -1,3 +1,29 @@
+"""
+Transcribe audio file using Whisper and extract word-level timestamps.
+
+This script uses the Whisper speech recognition model to transcribe an audio file
+and extract word-level timestamps. The output is saved as a JSON file containing
+an array of word objects with their text, start time, and end time.
+
+Usage:
+    python3 transcribe.py <audio_file> <output_file>
+
+Args:
+    audio_file: Path to the audio file to transcribe (e.g., .wav, .mp3)
+    output_file: Path where the JSON output will be saved
+
+Output:
+    A JSON file containing an array of word objects:
+    [
+        {
+            "word": "transcribed",
+            "start": 0.5,
+            "end": 1.2
+        },
+        ...
+    ]
+"""
+
 import sys
 import json
 import whisper_timestamped as whisper

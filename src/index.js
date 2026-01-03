@@ -2,7 +2,7 @@ import { execSync } from "child_process";
 import fs from "fs";
 
 import { normalizeLyrics } from "./normalize.js";
-import { alignLyrics } from "./align.js";
+import { alignLyrics } from "./accurate_align.js";
 
 console.log("Running Whisper transcription...");
 

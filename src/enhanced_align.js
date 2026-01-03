@@ -1,3 +1,29 @@
+/**
+ * Enhanced lyric alignment algorithm with word combination support and first/last letter priority matching.
+ * 
+ * This algorithm handles multiple alignment scenarios:
+ * - 1:1 matching: Single lyric word to single whisper word
+ * - N:1 matching: Multiple lyric words combined to match a single whisper word (e.g., ["mini", "bar"] -> "minibar")
+ * - 1:N matching: Single lyric word matched to multiple combined whisper words (e.g., "minibar" -> ["mini", "bar"])
+ * 
+ * PRIORITY SYSTEM:
+ * 1. First/last letter matching: If first and last letters match, this match is prioritized
+ * 2. Word combinations: Only tried if first/last letters don't match in 1:1 comparison
+ * 3. Similarity scores: Used to compare matches when first/last letters don't match
+ * 
+ * @param {string[]} lyrics - Array of normalized lyric words
+ * @param {Array<{word: string, start: number, end: number}>} whisperWords - Array of transcribed words with timestamps
+ * @param {number} [threshold=0.85] - Minimum similarity score (0-1) to accept a match (bypassed if first/last letters match)
+ * @returns {Array<{word: string, start: number, end: number}>} Array of aligned words with timing information
+ * 
+ * @example
+ * const lyrics = ["mini", "bar"];
+ * const whisperWords = [
+ *   { word: "minibar", start: 0.0, end: 0.8 }
+ * ];
+ * alignLyrics(lyrics, whisperWords); // Returns: [{ word: "mini bar", start: 0.0, end: 0.8 }]
+ */
+
 import stringSimilarity from "string-similarity"
 import { normalizeTranscription } from "./normalize.js";
 

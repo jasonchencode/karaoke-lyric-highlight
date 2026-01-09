@@ -1,6 +1,6 @@
 # Karaoke Lyric Highlighter
 
-Automatically aligns song lyrics with audio timestamps for karaoke-style word-by-word highlighting. Uses Whisper AI to transcribe audio and intelligently matches it to your lyrics.
+Automatically aligns song lyrics with audio timestamps for karaoke-style word-by-word highlighting. Uses Whisper by OpenAI to transcribe audio and intelligently matches it to your lyrics.
 
 ## Files
 
